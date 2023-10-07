@@ -3,6 +3,7 @@ import {Sensor, Prisma as PrismaSensors} from "@weather-platform/prisma-clients/
 import axios from "axios";
 import {useEffect, useState} from "react";
 import {Measures, Prisma as PrismaMeasures} from "@weather-platform/prisma-clients/Measures";
+import {AGW_URL} from "../../../../agw";
 
 /* eslint-disable-next-line */
 export interface SensorsTableItemProps {
@@ -13,7 +14,7 @@ export function SensorsTableItem(props: SensorsTableItemProps) {
 
   const fetchGetMeasuresList = async (params: PrismaMeasures.MeasuresFindManyArgs = {}) => {
     try {
-      const response = await axios.post( 'http://localhost:8045/api/v1/measures/get-with-params', params);
+      const response = await axios.post( AGW_URL + '/api/v1/measures/get-with-params', params);
       const data = response.data;
       return data;
     } catch (error) {

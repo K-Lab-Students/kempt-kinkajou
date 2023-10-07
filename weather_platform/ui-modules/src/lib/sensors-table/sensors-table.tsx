@@ -4,6 +4,7 @@ import axios from "axios";
 import {useEffect, useState} from "react";
 import AgregatorTableItem from "../agregator-table-item/agregator-table-item";
 import SensorsTableItem from "../sensors-table-item/sensors-table-item";
+import {AGW_URL} from "../../../../agw";
 
 /* eslint-disable-next-line */
 export interface SensorsTableProps {}
@@ -12,7 +13,7 @@ export function SensorsTable(props: SensorsTableProps) {
 
   const fetchGetSensorsList = async (params: Prisma.SensorFindManyArgs = {}) => {
     try {
-      const response = await axios.post( 'http://localhost:8045/api/v1/sensors/get-with-params', params);
+      const response = await axios.post( AGW_URL + '/api/v1/sensors/get-with-params', params);
       const data = response.data;
       return data;
     } catch (error) {

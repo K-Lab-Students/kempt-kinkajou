@@ -3,7 +3,7 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
-        <entry key="/weather_platform/apps/py-multy-agent-interpreter/examples/files/extracted_data.csv">
+        <entry key="/weather_platform/apps/py-tg-bot-weather-agent/examples/files/extracted_data.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
