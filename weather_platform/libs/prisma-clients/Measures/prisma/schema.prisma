@@ -1,0 +1,26 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../../../../node_modules/.prisma/Measures-client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("MEASURES_SOURCE_URL")
+}
+
+
+model Measures {
+  uuid                String            @id @default(uuid()) @db.VarChar(36)
+  createdAt           DateTime          @default(now()) @db.Timestamp(6)
+  updatedAt           DateTime          @updatedAt @db.Timestamp(6)
+  sendedInDate        String?
+  isDeleted           Boolean           @default(false)
+  sensor_uuid         String            @db.VarChar(36)
+  agregator_uuid      String            @db.VarChar(36)
+  time                String
+  type                String            @db.VarChar(36)
+  value               String            @db.VarChar(36)
+}
