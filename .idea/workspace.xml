@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6cb4dca5-d93c-4b61-8425-4ba8b7c9b2ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weather_platform/apps/py-tg-bot-weather-agent/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/apps/py-tg-bot-weather-agent/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +52,9 @@
       <recent name="$PROJECT_DIR$/weather_platform/apps" />
       <recent name="$PROJECT_DIR$/weather_platform/ui-modules/src/lib/navbar" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -61,7 +65,7 @@
       <option name="presentableId" value="Default" />
       <updated>1696663237589</updated>
       <workItem from="1696663238626" duration="5030000" />
-      <workItem from="1696670312018" duration="20846000" />
+      <workItem from="1696670312018" duration="26053000" />
     </task>
     <servers />
   </component>
