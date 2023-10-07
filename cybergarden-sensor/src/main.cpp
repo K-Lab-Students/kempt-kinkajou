@@ -8,9 +8,9 @@ ReedSolomonModule reedSolomonModule;
 TransmissionModule transmissionModule(transmitterModule, reedSolomonModule);
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);
   transmitterModule.init();
-  pinMode(LED_BUILTIN, OUTPUT);
+  // pinMode(LED_BUILTIN, OUTPUT);
 }
 
 uint16_t getMockSensorData() {
@@ -22,10 +22,11 @@ void loop() {
   measureData.sensor_id = 0xA5;
   measureData.sensor_type = 0x01;
   measureData.payload = getMockSensorData();
+  // transmissionModule.encrypt((uint8_t*)&measureData+1, 4, (uint8_t*)&measureData+1);
   transmissionModule.transmit(measureData);
 
-  analogWrite(LED_BUILTIN, 255);
-  delay(200);
-  analogWrite(LED_BUILTIN, 0);
-  delay(10000);
+  // analogWrite(LED_BUILTIN, 255);
+  // delay(200);
+  // analogWrite(LED_BUILTIN, 0);
+  // delay(10000);
 }
