@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fa9b3ab0-bfd5-4e07-8e87-da3d901a4d2e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/apps/agw/src/measures/measures.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/apps/agw/src/measures/measures.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather_platform/apps/py-tg-bot-weather-agent/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/apps/py-tg-bot-weather-agent/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
