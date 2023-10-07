@@ -65,7 +65,7 @@ export class MeasuresController {
     return check ? { code: '200' } : { code: '500' };
   }
 
-  
+
   @ApiOperation({ summary: 'Register Measure', description: 'Create Measure using ASC_WEATHER_RGM', operationId: 'create', tags: ['Measures StorePackages'],  })
   @ApiResponse({ status: 200, type: MeasuresCreateSuccessResponse, description: 'The found measures', })
   @Get('register/:sendedInDate/:sensor_uuid/:agregator_uuid/:math_time/:msg_type/:msg_value')
