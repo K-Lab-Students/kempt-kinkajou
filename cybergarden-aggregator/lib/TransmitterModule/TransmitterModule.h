@@ -1,12 +1,13 @@
 //
 // Created by o.likhogub on 10/7/2023.
 //
+#ifndef KEMPT_KINKAJOU_TRANSMITTERMODULE_H
+#define KEMPT_KINKAJOU_TRANSMITTERMODULE_H
 #include "Arduino.h"
 #include <RH_ASK.h>
 #include <SPI.h> 
 
-#ifndef KEMPT_KINKAJOU_TRANSMITTERMODULE_H
-#define KEMPT_KINKAJOU_TRANSMITTERMODULE_H
+
 
 class TransmitterModule {
 private:
