@@ -66,51 +66,12 @@ copy .env.example .env
 ```  
   
 ```bash  
-cd apps/matrix-events-registry/docker && docker-compose up -d
-```  
-```bash  
-cd apps/matrix-registry/docker && docker-compose up -d
-```  
-```bash  
-cd apps/labs/docker && docker-compose up -d
-```  
-```bash  
-cd apps/labs/docker && docker-compose up -d
-```  
-  
-[Matrix Registry Service](/apps/matrix-registry)  
-```bash  
-prisma db push --schema="./libs/prisma-clients/matrix-device-registry/prisma/schema.prisma"  
-```  
-
-```bash  
-prisma generate --schema="./libs/prisma-clients/matrix-device-registry/prisma/schema.prisma"  
-```  
-
-[Matrix Events Registry Service](/apps/matrix-events-registry)
-```bash  
-prisma db push --schema="./libs/prisma-clients/matrix-events/prisma/schema.prisma"  
-```  
-
-```bash  
-prisma generate --schema="./libs/prisma-clients/matrix-events/prisma/schema.prisma"  
-```  
-
-```bash  
-prisma db push --schema="./libs/prisma-clients/labs/prisma/schema.prisma"  
-```  
-
-```bash  
-prisma generate --schema="./libs/prisma-clients/labs/prisma/schema.prisma"  
-```  
-
-```bash  
-nx run py-multy-agent-interpreter:serve
-```  
+docker-compose up -d
+```
   
 Run all services:  
 ```bash  
-nx run-many --parallel --target=serve --projects=frontend,agw,matrix-registry,matrix-events-registry,labs  
+nx run-many --parallel --target=serve --projects=crud,agw,agregators-service,measures-service,sensors-service
 ```   
 
 

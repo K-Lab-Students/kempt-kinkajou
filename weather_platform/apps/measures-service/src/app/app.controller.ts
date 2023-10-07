@@ -102,7 +102,7 @@ export class AppController {
   })
   @Post('create')
   async createMeasure(
-    @Body() sectionData: MeasureCreateDTO,
+    @Body() sectionData: MeasureCreateDTOClass,
   ): Promise<Measures> {
 
     const { uuid } = uuidv4();

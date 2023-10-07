@@ -27,7 +27,7 @@ async function bootstrap() {
   app.enableCors();
   await app.listen(port);
   Logger.log(
-    `🚀 Application is running on: http://localhost:${port}/${globalPrefix}`
+    `🚀 AGW is running on: http://localhost:${port}/${globalPrefix}`
   );
 }
 
