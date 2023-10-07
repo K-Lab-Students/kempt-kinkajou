@@ -1,4 +1,4 @@
-import {Body, Controller, Get, Post} from "@nestjs/common";
+import {Body, Controller, Get, Param, Post} from "@nestjs/common";
 import { MeasureCreateDTOLocalClass, MeasuresService } from "./measures.service";
 import {
   ApiInternalServerErrorResponse,
@@ -63,6 +63,33 @@ export class MeasuresController {
     });
 
     return check ? { code: '200' } : { code: '500' };
+  }
+
+
+  @ApiOperation({ summary: 'Register Measure', description: 'Create Measure using ASC_WEATHER_RGM', operationId: 'create', tags: ['Measures StorePackages'],  })
+  @ApiResponse({ status: 200, type: MeasuresCreateSuccessResponse, description: 'The found measures', })
+  @Get('register/:sendedInDate/:sensor_id/:agregator_id/:math_time/:msg_type/:msg_value')
+  async createMeasuresPackBody(
+    @Param('sendedInDate') sendedInDate: string,
+    @Param('sensor_id') sensor_uuid: string,
+    @Param('agregator_id') agregator_uuid: string,
+    @Param('math_time') math_time: string,
+    @Param('msg_type') msg_type: string,
+    @Param('msg_value') msg_value: string,
+  ): Promise<Partial<MeasuresCreateSuccessResponse> | null> {
+
+    const measure_create_data: MeasureCreateDTOLocalClass = {
+      sendedInDate: sendedInDate,
+      sensor_uuid: sensor_uuid,
+      agregator_uuid: agregator_uuid,
+      time: math_time,
+      type: msg_type,
+      value: msg_value,
+    }
+
+    const res = await this.measuresService.create(measure_create_data);
+
+    return res ? { code: '200' } : { code: '500' };
   }
 
 

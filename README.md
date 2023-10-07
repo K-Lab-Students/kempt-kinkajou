@@ -14,4 +14,9 @@
 
 ## Telegram Bot with AI
 
-![Screenshot 2023-10-07 at 19.08.53.png](assets%2FScreenshot%202023-10-07%20at%2019.08.53.png)
+### Time per Request
+
+![visualization.svg](assets%2Fvisualization.svg)
+
+![Screenshot 2023-10-08 at 01.45.59.png](assets%2FScreenshot%202023-10-08%20at%2001.45.59.png)
+

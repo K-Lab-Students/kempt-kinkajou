@@ -3,6 +3,7 @@ import AgregatorTableItem from "../agregator-table-item/agregator-table-item";
 import { Agregator, Prisma } from "@weather-platform/prisma-clients/Agregators";
 import axios from "axios";
 import {useEffect, useState} from "react";
+import {AGW_URL} from "../../../../agw";
 
 /* eslint-disable-next-line */
 export interface AgregatorTableProps {}
@@ -11,7 +12,7 @@ export function AgregatorTable(props: AgregatorTableProps) {
 
   const fetchGetAgregatorsList = async (params: Prisma.AgregatorFindManyArgs = {}) => {
     try {
-      const response = await axios.post( 'http://localhost:8045/api/v1/agregator/get-with-params', params);
+      const response = await axios.post( AGW_URL + '/api/v1/agregator/get-with-params', params);
       const data = response.data;
       return data;
     } catch (error) {

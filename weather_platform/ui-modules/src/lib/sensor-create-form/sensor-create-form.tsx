@@ -6,8 +6,10 @@ import axios from "axios";
 import {AgregatorCreateDTOClass} from "../../../../apps/agregators-service/src/DTO/AgregatorCreateDTOClass.dto";
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import {SensorCreateDTOClass} from "../../../../apps/sensors-service/src/DTO/SensorCreateDTOClass.dto";
+// eslint-disable-next-line @nx/enforce-module-boundaries
 import {MeasuresCreateDTOClass} from "../../../../apps/agw/src/measures/DTO/CreateMeasuresClass.dto";
 import {randomStringGenerator} from "@nestjs/common/utils/random-string-generator.util";
+import {AGW_URL} from "../../../../agw";
 
 /* eslint-disable-next-line */
 export interface SensorCreateFormProps {}
@@ -26,7 +28,7 @@ export function SensorCreateForm(props: SensorCreateFormProps) {
   // todo: incapsulate this function
   const fetchGetAgregatorsList = async (params: Prisma.AgregatorFindManyArgs = {}) => {
     try {
-      const response = await axios.post( 'http://localhost:8045/api/v1/agregator/get-with-params', params);
+      const response = await axios.post( AGW_URL + '/api/v1/agregator/get-with-params', params);
       const data = response.data;
       return data;
     } catch (error) {
@@ -55,7 +57,7 @@ export function SensorCreateForm(props: SensorCreateFormProps) {
 
   const fetchCreateSensor = async (params: SensorCreateDTOClass) => {
     try {
-      const response = await axios.post( 'http://localhost:8045/api/v1/sensors/create', params);
+      const response = await axios.post( AGW_URL + '/api/v1/sensors/create', params);
       const data = response.data;
       return data;
     } catch (error) {
@@ -88,7 +90,7 @@ export function SensorCreateForm(props: SensorCreateFormProps) {
 
   const fetchCreateMeasure = async (params: MeasuresCreateDTOClass) => {
     try {
-      const response = await axios.post( 'http://localhost:8045/api/v1/measures/register', params);
+      const response = await axios.post( AGW_URL + '/api/v1/measures/register', params);
       const data = response.data;
       return data;
     } catch (error) {

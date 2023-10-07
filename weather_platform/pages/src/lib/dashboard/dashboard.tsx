@@ -9,6 +9,7 @@ import {BaseLayout} from "@weather-platform/layout";
 import {useEffect, useState} from "react";
 import {Prisma, Measures} from "@weather-platform/prisma-clients/Measures";
 import axios from "axios";
+import {AGW_URL} from "../../../../agw";
 
 /* eslint-disable-next-line */
 export interface DashboardProps {}
@@ -17,7 +18,7 @@ export function Dashboard(props: DashboardProps) {
 
   const fetchGetMeasuresList = async (params: Prisma.MeasuresFindManyArgs = {}) => {
     try {
-      const response = await axios.post( 'http://localhost:8045/api/v1/measures/get-with-params', params);
+      const response = await axios.post( AGW_URL + '/api/v1/measures/get-with-params', params);
       const data = response.data;
       return data;
     } catch (error) {

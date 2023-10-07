@@ -4,6 +4,7 @@ import axios from "axios";
 import {useState} from "react";
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import {AgregatorCreateDTOClass} from "../../../../apps/agregators-service/src/DTO/AgregatorCreateDTOClass.dto";
+import {AGW_URL} from "../../../../agw";
 
 /* eslint-disable-next-line */
 export interface AgregatorCreateFormProps {}
@@ -17,7 +18,7 @@ export function AgregatorCreateForm(props: AgregatorCreateFormProps) {
 
   const fetchCreateAgregator = async (params: AgregatorCreateDTOClass) => {
     try {
-      const response = await axios.post( 'http://localhost:8045/api/v1/agregator/create', params);
+      const response = await axios.post( AGW_URL + '/api/v1/agregator/create', params);
       const data = response.data;
       return data;
     } catch (error) {

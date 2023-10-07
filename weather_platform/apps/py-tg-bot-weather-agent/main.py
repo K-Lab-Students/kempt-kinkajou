@@ -10,9 +10,15 @@ import requests
 import telebot
 from langchain.agents import create_json_agent, AgentExecutor
 from langchain.agents.agent_toolkits import JsonToolkit
+import os
 
-# OPENAI_API = "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"
-OPENAI_API = "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"
+OPENAI_API = "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"
+
+os.environ["LANGCHAIN_TRACING_V2"] = "true"
+os.environ["LANGCHAIN_ENDPOINT"] = "https://api.smith.langchain.com"
+os.environ["LANGCHAIN_API_KEY"] = "ls__f7252ae2e7e4433d965ad37d94d63d6d"
+project_name = "k-lab-weather"
+os.environ["LANGCHAIN_PROJECT"] = "project_name"
 
 BOT_KEY = '6415742729:AAHVyDkHHF57ZsVd9gJjVtXjKE2M9CydzPk'
 
@@ -21,10 +27,10 @@ WELCOME_MSG = """"
 Спроси что-нибудь у нашего бота 🙂
 """
 
-# Weather AGW
-AGW_PORT = 8045
-AGW_HOST = 'localhost'
-AGW_URL = f"http://{AGW_HOST}:{AGW_PORT}/"
+# AGW_PORT = 8045
+# AGW_HOST = 'localhost'
+# AGW_URL = f"http://{AGW_HOST}:{AGW_PORT}/"
+AGW_URL = f"https://gw.cg.k-lab.su/"
 
 bot = telebot.TeleBot(BOT_KEY)
 
@@ -53,7 +59,7 @@ def fetch_get_weather_data(params={}):
         response = requests.get(AGW_URL + 'api/v1/measures/get-for-ai')
         response.raise_for_status()
         data = response.json()
-        return data
+        return data[0]
     except requests.exceptions.RequestException as e:
         print('Error fetching data:', e)
         return None
@@ -111,7 +117,8 @@ agent_chain = initialize_agent(
   max_iterations=4,
   agent=AgentType.STRUCTURED_CHAT_ZERO_SHOT_REACT_DESCRIPTION,
   verbose=True,
-  output_parser=output_parser
+  output_parser=output_parser,
+  project_name=project_name
 )
 
 # print(get_weather_data_history_insight())
