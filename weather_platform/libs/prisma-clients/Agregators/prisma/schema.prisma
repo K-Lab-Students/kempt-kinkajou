@@ -1,0 +1,30 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../../../../node_modules/.prisma/Agregators-client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("AGREGATORS_SOURCE_URL")
+}
+
+
+model Agregator {
+  uuid                String            @id @default(uuid()) @db.VarChar(36)
+  createdAt           DateTime          @default(now()) @db.Timestamp(6)
+  updatedAt           DateTime          @updatedAt @db.Timestamp(6)
+  sendedInDate        String?
+  creatorUUID         String            @db.VarChar(36)
+  isDeleted           Boolean           @default(false)
+  lat                 Float?
+  lng                 Float?
+  height              Float?             // высота над уровнем моря
+  name                String?           @db.VarChar(255)
+  country             String?           @db.VarChar(255)
+  city                String?           @db.VarChar(255)
+  region              String?           @db.VarChar(255)
+  street              String?           @db.VarChar(255)
+}

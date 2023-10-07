@@ -1,0 +1,60 @@
+version: '3.7'
+services:
+  sensors-database:
+    image: postgres:12.1-alpine
+    container_name: weather_platform_sensors_database
+    restart: always
+    ports:
+      - 5440:5432
+    volumes:
+      - ./data_db_sensors:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: sensors
+      POSTGRES_USER: user2235
+      POSTGRES_PASSWORD: atlantium
+    networks:
+      - sensors-database
+
+  agreagators-database:
+    image: postgres:12.1-alpine
+    container_name: weather_platform_agreagators_database
+    restart: always
+    ports:
+      - 5441:5432
+    volumes:
+      - ./data_db_agregators:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: agregators
+      POSTGRES_USER: user2235
+      POSTGRES_PASSWORD: atlantium
+    networks:
+      - agregators-database
+
+  measures-database:
+    image: postgres:12.1-alpine
+    container_name: weather_platform_measures_database
+    restart: always
+    ports:
+      - 5442:5432
+    volumes:
+      - ./data_db_measures:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: measures
+      POSTGRES_USER: user2235
+      POSTGRES_PASSWORD: atlantium
+    networks:
+      - measures-database
+
+networks:
+  sensors-database:
+    external: false
+    name: sensors_db_network
+    driver: bridge
+  agregators-database:
+    external: false
+    name: agregators_db_network
+    driver: bridge
+  measures-database:
+    external: false
+    name: measures_db_network
+    driver: bridge
