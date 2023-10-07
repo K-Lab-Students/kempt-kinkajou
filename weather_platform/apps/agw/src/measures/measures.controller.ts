@@ -68,11 +68,11 @@ export class MeasuresController {
 
   @ApiOperation({ summary: 'Register Measure', description: 'Create Measure using ASC_WEATHER_RGM', operationId: 'create', tags: ['Measures StorePackages'],  })
   @ApiResponse({ status: 200, type: MeasuresCreateSuccessResponse, description: 'The found measures', })
-  @Get('register/:sendedInDate/:sensor_uuid/:agregator_uuid/:math_time/:msg_type/:msg_value')
+  @Get('register/:sendedInDate/:sensor_id/:agregator_id/:math_time/:msg_type/:msg_value')
   async createMeasuresPackBody(
     @Param('sendedInDate') sendedInDate: string,
-    @Param('sensor_uuid') sensor_uuid: string,
-    @Param('agregator_uuid') agregator_uuid: string,
+    @Param('sensor_id') sensor_uuid: string,
+    @Param('agregator_id') agregator_uuid: string,
     @Param('math_time') math_time: string,
     @Param('msg_type') msg_type: string,
     @Param('msg_value') msg_value: string,
