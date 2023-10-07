@@ -8,15 +8,15 @@
 #ifndef KEMPT_KINKAJOU_TRANSMITTERMODULE_H
 #define KEMPT_KINKAJOU_TRANSMITTERMODULE_H
 
-#define RH_TRANSMIT_PIN 12
-#define RH_RECEIVE_PIN 11
+#define RH_TRANSMIT_PIN 5
+#define RH_RECEIVE_PIN 4
 
 class TransmitterModule {
 private:
     RH_ASK *rhAsk;
 public:
     TransmitterModule() {
-        rhAsk = new RH_ASK();
+        rhAsk = new RH_ASK(2000, RH_RECEIVE_PIN, RH_TRANSMIT_PIN);
     }
     bool init() {
         return rhAsk->init();

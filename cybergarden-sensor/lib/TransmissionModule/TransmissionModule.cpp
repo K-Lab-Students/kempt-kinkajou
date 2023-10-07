@@ -30,24 +30,28 @@ void TransmissionModule::encrypt(uint8_t * input_data, size_t data_size, uint8_t
         cipher->encrypt(buffer + posn, input_data + posn, len);
     }
 
-    byte buffer2[MAX_PLAINTEXT_LEN];
-    memset(buffer2, 0xBA, sizeof(buffer));
+    //*************************
+    //Encryption Testing
+    //*************************
 
-    cipher->setKey(encryptionKey, 16);
-    cipher->setIV(iv, iv_size);
+    // byte buffer2[MAX_PLAINTEXT_LEN];
+    // memset(buffer2, 0xBA, sizeof(buffer));
 
-    for (posn = 0; posn < data_size; posn += inc) {
-        len = data_size - posn;
-        if (len > inc)
-            len = inc;
-        cipher->decrypt(buffer2 + posn, buffer + posn, len);
-    }
+    // cipher->setKey(encryptionKey, 16);
+    // cipher->setIV(iv, iv_size);
 
-    if (memcmp(buffer2, input_data, data_size) != 0) {
-        // Serial.println("doesn't work");
-    } else{
-        // Serial.println("works");
-    }
+    // for (posn = 0; posn < data_size; posn += inc) {
+    //     len = data_size - posn;
+    //     if (len > inc)
+    //         len = inc;
+    //     cipher->decrypt(buffer2 + posn, buffer + posn, len);
+    // }
+
+    // if (memcmp(buffer2, input_data, data_size) != 0) {
+    //     Serial.println("doesn't work");
+    // } else{
+    //     Serial.println("works");
+    // }
 
     memcpy(output_data, buffer, data_size);
 }
@@ -57,8 +61,6 @@ void TransmissionModule::transmit(MeasureData &data)
     uint8_t msg[MSG_LENGTH];
     msg[0] = data.sensor_id;
     memcpy(msg + 1, (void *) &data, 4);
-    
-
     uint8_t encoded[MSG_LENGTH + ECC_LENGTH];
     reedSolomonModule->encode(msg, encoded);
     transmitterModule->send(encoded, MSG_LENGTH + ECC_LENGTH);
