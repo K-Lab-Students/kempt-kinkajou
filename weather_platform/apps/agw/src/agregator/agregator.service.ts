@@ -6,10 +6,12 @@ import { Agregator, Prisma } from "@weather-platform/prisma-clients/Agregators";
 export class AgregatorService {
   constructor(private readonly httpService: HttpService) {}
 
-  AGREGATOR_SERVICE_URL = (process.env.AGREGATOR_SERVICE_PROTOCOL || 'http://') +
-    (process.env.AGREGATOR_SERVICE_HOST || 'localhost') + ':' +
-    (process.env.AGREGATOR_SERVICE_PORT || 3000) +
-    '/api/';
+  // AGREGATOR_SERVICE_URL = (process.env.AGREGATOR_SERVICE_PROTOCOL || 'http://') +
+  //   (process.env.AGREGATOR_SERVICE_HOST || 'localhost') + ':' +
+  //   (process.env.AGREGATOR_SERVICE_PORT || 3000) +
+  //   '/api/';
+
+  AGREGATOR_SERVICE_URL = 'http://localhost:8047/api/';
 
   async get(data: Prisma.AgregatorFindManyArgs): Promise<Partial<Agregator[]> | null> {
     try {

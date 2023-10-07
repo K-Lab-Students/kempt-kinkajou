@@ -17,9 +17,9 @@
     "paths": {
       "@weather-platform/layout": ["layout/src/index.ts"],
       "@weather-platform/pages": ["pages/src/index.ts"],
-      "@weather-platform/prisma-generator": ["prisma-generator/src/index.ts"],
       "@weather-platform/prisma-clients": ["libs/prisma-clients/index.ts"],
       "@weather-platform/prisma-clients/*": ["libs/prisma-clients/*"],
+      "@weather-platform/prisma-generator": ["prisma-generator/src/index.ts"],
       "@weather-platform/ui": ["ui/src/index.ts"],
       "@weather-platform/ui-modules": ["ui-modules/src/index.ts"]
     }

@@ -34,10 +34,7 @@ export class MeasureCreateDTOLocalClass implements MeasureCreateLocalDTO {
 export class MeasuresService {
   constructor(private readonly httpService: HttpService) {}
 
-  MEASURES_SERVICE_URL = (process.env.MEASURES_SERVICE_PROTOCOL || 'http://') +
-    (process.env.MEASURES_SERVICE_HOST || 'localhost') + ':' +
-    (process.env.MEASURES_SERVICE_PORT || 3000) +
-    '/api/';
+  MEASURES_SERVICE_URL = "http://localhost:8048/api/"
 
   async get(data: Prisma.MeasuresFindManyArgs): Promise<Partial<Measures[]> | null> {
     try {
@@ -52,11 +49,11 @@ export class MeasuresService {
   async create(data: MeasureCreateDTOLocalClass): Promise<Partial<Measures> | null> {
     // eslint-disable-next-line no-useless-catch
     try {
-      const updated_data: MeasureCreateDTOClass = {
+      const updated_data: any = {
         ...data,
-        creatorUUID: '1',
-      }
-      const response = await this.httpService.post(this.MEASURES_SERVICE_URL + 'create', data).toPromise();
+      };
+      console.log(updated_data);
+      const response = await this.httpService.post(this.MEASURES_SERVICE_URL + 'create', updated_data).toPromise();
       return response.data;
     } catch (error) {
       throw error;

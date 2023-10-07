@@ -44,6 +44,7 @@ export class AgregatorController {
   async getAgregators(
     @Body() params: AgregatorGetDTO,
   ): Promise<Partial<Agregator[]> | null> {
+    console.log(params);
     return await this.agregatorService.get(params);
   }
 
@@ -63,6 +64,7 @@ export class AgregatorController {
   async createAgregator(
     @Body() sectionData: AgregatorCreateDTO,
   ): Promise<Partial<Agregator> | null> {
+    console.log(sectionData);
     return await this.agregatorService.create(sectionData);
   }
 

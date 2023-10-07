@@ -6,10 +6,7 @@ import { Sensor, Prisma } from "@weather-platform/prisma-clients/Sensors";
 export class SensorsService {
   constructor(private readonly httpService: HttpService) {}
 
-  SENSORS_SERVICE_URL = (process.env.SENSORS_SERVICE_PROTOCOL || 'http://') +
-    (process.env.SENSORS_SERVICE_HOST || 'localhost') + ':' +
-    (process.env.SENSORS_SERVICE_PORT || 3000) +
-    '/api/';
+  SENSORS_SERVICE_URL = 'http://localhost:8046/api/';
 
   async get(data: Prisma.SensorFindManyArgs): Promise<Partial<Sensor[]> | null> {
     try {

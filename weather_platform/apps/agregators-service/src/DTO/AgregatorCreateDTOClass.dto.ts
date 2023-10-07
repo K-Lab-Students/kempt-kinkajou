@@ -8,9 +8,9 @@ export class AgregatorCreateDTOClass {
   @ApiProperty({description: 'The agregator name'})
   name: string;
   @ApiProperty({description: 'The agregator latitude'})
-  let: number;
+  lat: string;
   @ApiProperty({description: 'The agregator longitude'})
-  lng: number;
+  lng: string;
   @ApiProperty({description: 'The agregator height from the ground'})
   height: number;
   @ApiProperty({description: 'The agregator country'})

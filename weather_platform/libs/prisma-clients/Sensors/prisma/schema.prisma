@@ -19,8 +19,8 @@ model Sensor {
   sendedInDate        String?
   creatorUUID         String            @db.VarChar(36)
   isDeleted           Boolean           @default(false)
-  lat                 Float?
-  lng                 Float?
+  lat                 String?
+  lng                 String?
   height              Float?             // высота над уровнем моря
   name                String?           @db.VarChar(255)
   agregator_uuid      String?           @db.VarChar(36)

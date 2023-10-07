@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from "@nestjs/common";
+import {Body, Controller, Get, Post} from "@nestjs/common";
 import { MeasureCreateDTOLocalClass, MeasuresService } from "./measures.service";
 import {
   ApiInternalServerErrorResponse,
@@ -12,6 +12,11 @@ import {
   MeasuresCreateSuccessResponse,
   MeasuresDataClass
 } from "./DTO/CreateMeasuresClass.dto";
+// eslint-disable-next-line @nx/enforce-module-boundaries
+import {AgregatorGetDTO} from "../../../agregators-service/src/app/app.controller";
+import {Measures} from "@weather-platform/prisma-clients/Measures";
+// eslint-disable-next-line @nx/enforce-module-boundaries
+import {MeasureGetDTOClass} from "../../../measures-service/src/DTO/MeasureGetDTOClass.dto";
 
 @Controller('measures')
 export class MeasuresController {
@@ -50,11 +55,52 @@ export class MeasuresController {
 
       const res = await this.measuresService.create(measure_create_data);
 
+      console.log(res);
+
       if (!res) {
         check = true;
       }
     });
 
     return check ? { code: '200' } : { code: '500' };
+  }
+
+
+
+  @ApiOperation({
+    summary: 'Get measures data with Prisma params', tags: ['Measures'], description: 'Get measures with Prisma params', operationId: 'getWithParams',
+  })
+  @ApiResponse({ status: 200, type: MeasureGetDTOClass, headers: { 'X-Request-Id': { schema: { type: 'string' } } }, description: 'The found measure', })
+  @ApiResponse({ status: 500, type: Error, description: 'Internal server error', headers: { 'X-Request-Id': { schema: { type: 'string' } } }, })
+  @ApiOkResponse({
+    description: 'Retrieved measures successfully',
+    type: MeasureGetDTOClass, status: 200, headers: { 'X-Request-Id': { schema: { type: 'string' } } },
+  })
+  @ApiNotFoundResponse({
+    description: 'No measures found for this request', type: Error, status: 404, headers: { 'X-Request-Id': { schema: { type: 'string' } } },
+  })
+  @ApiInternalServerErrorResponse({
+    description: 'Internal server error', status: 500, headers: { 'X-Request-Id': { schema: { type: 'string' } } }, type: Error,
+  })
+  @Post('get-with-params')
+  async getAgregators(
+    @Body() params: MeasureGetDTOClass,
+  ): Promise<Partial<Measures[]> | null> {
+    return await this.measuresService.get(params);
+  }
+
+
+
+  @Get('get-for-ai')
+  async getAgregatorsForAI() {
+    const res = await this.measuresService.get({});
+    const newArray = res.map(item => ({
+      sensor_uuid: item.sensor_uuid,
+      agregator_uuid: item.agregator_uuid,
+      type: item.type,
+      value: item.value,
+      time: item.time
+    }));
+    return newArray;
   }
 }

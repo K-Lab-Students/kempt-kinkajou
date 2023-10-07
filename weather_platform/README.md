@@ -74,6 +74,10 @@ Run all services:
 nx run-many --parallel --target=serve --projects=crud,agw,agregators-service,measures-service,sensors-service
 ```   
 
+```bash  
+nx run py-tg-bot-weather-agent:serve
+```   
+
 
 ## Структура репозитория
 Репозиторий содержит следующие основные каталоги и файлы:

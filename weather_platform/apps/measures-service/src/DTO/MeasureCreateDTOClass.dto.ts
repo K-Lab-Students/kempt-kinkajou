@@ -2,7 +2,6 @@ import { ApiProperty } from "@nestjs/swagger";
 
 type MeasureCreateDTO = {
   sendedInDate: string;
-  creatorUUID: string;
   sensor_uuid: string;
   agregator_uuid: string;
   time: string;
@@ -13,8 +12,6 @@ type MeasureCreateDTO = {
 export class MeasureCreateDTOClass implements MeasureCreateDTO {
   @ApiProperty({description: 'The date when the was sent'})
   sendedInDate: string;
-  @ApiProperty({description: 'The UUID of the creator'})
-  creatorUUID: string;
   @ApiProperty({description: 'The sensor uuid'})
   sensor_uuid: string;
   @ApiProperty({description: 'The agregator uuid'})

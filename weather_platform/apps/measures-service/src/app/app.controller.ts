@@ -12,27 +12,7 @@ import { Measures, Prisma } from '@weather-platform/prisma-clients/Measures';
 
 import { AppService } from './app.service';
 import { MeasureCreateDTOClass } from "../DTO/MeasureCreateDTOClass.dto";
-
-export type MeasureGetDTO = {
-  skip?: number;
-  take?: number;
-  cursor?: Prisma.MeasuresWhereUniqueInput;
-  where?: Prisma.MeasuresWhereInput;
-  orderBy?: Prisma.MeasuresOrderByWithRelationInput;
-};
-
-class MeasureGetDTOClass {
-  @ApiProperty({description: 'The number of items to skip'})
-  skip?: number;
-  @ApiProperty({description: 'The number of items to take'})
-  take?: number;
-  @ApiProperty({description: 'The cursor'})
-  cursor?: Prisma.MeasuresWhereUniqueInput;
-  @ApiProperty({description: 'The where'})
-  where?: Prisma.MeasuresWhereInput;
-  @ApiProperty({description: 'The orderBy'})
-  orderBy?: Prisma.MeasuresOrderByWithRelationInput;
-}
+import {MeasureGetDTOClass} from "../DTO/MeasureGetDTOClass.dto";
 
 type MeasureUpdateDTO = {
   where: Prisma.MeasuresWhereUniqueInput;
@@ -68,7 +48,7 @@ export class AppController {
   })
   @Post('get-with-params')
   async getMeasures(
-    @Body() params: MeasureGetDTO,
+    @Body() params: MeasureGetDTOClass,
   ): Promise<Measures[]> {
 
     const { skip, take, cursor, where, orderBy } = params;
@@ -104,6 +84,8 @@ export class AppController {
   async createMeasure(
     @Body() sectionData: MeasureCreateDTOClass,
   ): Promise<Measures> {
+
+    console.log("calles");
 
     const { uuid } = uuidv4();
 

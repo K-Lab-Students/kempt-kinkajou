@@ -27,8 +27,8 @@ export type AgregatorCreateDTO = {
   sendedInDate: string;
   creatorUUID: string;
   name: string;
-  let: number;
-  lng: number;
+  lat: string;
+  lng: string;
   height: number;
   country: string;
   city: string;
@@ -101,6 +101,8 @@ export class AppController {
       ...sectionData,
       uuid: uuid,
     };
+
+    console.log(updatedWhere);
 
     const agregator = await this.appService.create(updatedWhere);
     return agregator;
