@@ -6,34 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6cb4dca5-d93c-4b61-8425-4ba8b7c9b2ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/apps/agregators-service/src/DTO/AgregatorCreateDTOClass.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/apps/agregators-service/src/DTO/AgregatorCreateDTOClass.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/apps/agregators-service/src/app/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/apps/agregators-service/src/app/app.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/apps/agw/src/agregator/agregator.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/apps/agw/src/agregator/agregator.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/apps/agw/src/agregator/agregator.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/apps/agw/src/agregator/agregator.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/apps/agw/src/app/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/apps/agw/src/app/app.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/apps/agw/src/measures/measures.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/apps/agw/src/measures/measures.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/apps/agw/src/measures/measures.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/apps/agw/src/measures/measures.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/apps/agw/src/sensors/sensors.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/apps/agw/src/sensors/sensors.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/apps/crud/src/app/app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/apps/crud/src/app/app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/apps/measures-service/src/DTO/MeasureCreateDTOClass.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/apps/measures-service/src/DTO/MeasureCreateDTOClass.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/apps/measures-service/src/app/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/apps/measures-service/src/app/app.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/apps/sensors-service/src/DTO/SensorCreateDTOClass.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/apps/sensors-service/src/DTO/SensorCreateDTOClass.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/layout/src/lib/base-layout/base-layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/layout/src/lib/base-layout/base-layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/libs/prisma-clients/Agregators/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/libs/prisma-clients/Agregators/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/libs/prisma-clients/Measures/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/libs/prisma-clients/Measures/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/libs/prisma-clients/Sensors/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/libs/prisma-clients/Sensors/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/pages/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/pages/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/pages/src/lib/agregators-page/agregators-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/pages/src/lib/agregators-page/agregators-page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/pages/src/lib/dashboard/dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/pages/src/lib/dashboard/dashboard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/tsconfig.base.json" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/tsconfig.base.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/ui-modules/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/ui-modules/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/ui-modules/src/lib/agregator-table-item/agregator-table-item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/ui-modules/src/lib/agregator-table-item/agregator-table-item.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/ui-modules/src/lib/agregator-table/agregator-table.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/ui-modules/src/lib/agregator-table/agregator-table.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/ui-modules/src/lib/navbar/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/ui-modules/src/lib/navbar/navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/ui/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/ui/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather_platform/apps/py-tg-bot-weather-agent/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/apps/py-tg-bot-weather-agent/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +61,7 @@
       <option name="presentableId" value="Default" />
       <updated>1696663237589</updated>
       <workItem from="1696663238626" duration="5030000" />
-      <workItem from="1696670312018" duration="20121000" />
+      <workItem from="1696670312018" duration="20846000" />
     </task>
     <servers />
   </component>

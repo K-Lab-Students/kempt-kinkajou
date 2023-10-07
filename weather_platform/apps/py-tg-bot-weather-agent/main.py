@@ -8,7 +8,7 @@ from typing import Optional
 import requests
 import telebot
 
-OPENAI_API = "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"
+OPENAI_API = "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"
 
 BOT_KEY = '6415742729:AAHVyDkHHF57ZsVd9gJjVtXjKE2M9CydzPk'
 
