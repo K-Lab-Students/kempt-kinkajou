@@ -27,5 +27,5 @@ void loop() {
   analogWrite(LED_BUILTIN, 255);
   delay(200);
   analogWrite(LED_BUILTIN, 0);
-  delay(10000);
+  delay(1000);
 }
