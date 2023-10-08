@@ -8,9 +8,11 @@
 #define ECC_LENGTH 4
 #define TOTAL_LENGTH (MSG_LENGTH + ECC_LENGTH)
 
-void TransmissionModule::encrypt(uint8_t * input_data, size_t data_size, uint8_t* output_data)
+void TransmissionModule::transmit(MeasureData &data)
 {
+
     size_t posn, len, inc = 5;
+    size_t data_size = 4;
     cipher->clear();
     cipher->setKey(encryptionKey, key_size);
     cipher->setIV(iv, iv_size);
@@ -27,7 +29,7 @@ void TransmissionModule::encrypt(uint8_t * input_data, size_t data_size, uint8_t
         len = data_size - posn;
         if (len > inc)
             len = inc;
-        cipher->encrypt(buffer + posn, input_data + posn, len);
+        cipher->encrypt(buffer + posn, (uint8_t*)&data + 1 + posn, len);
     }
 
     //*************************
@@ -47,17 +49,12 @@ void TransmissionModule::encrypt(uint8_t * input_data, size_t data_size, uint8_t
     //     cipher->decrypt(buffer2 + posn, buffer + posn, len);
     // }
 
-    // if (memcmp(buffer2, input_data, data_size) != 0) {
+    // if (memcmp(buffer2, (uint8_t*)&data + 1, data_size) != 0) {
     //     Serial.println("doesn't work");
     // } else{
     //     Serial.println("works");
     // }
 
-    memcpy(output_data, buffer, data_size);
-}
-
-void TransmissionModule::transmit(MeasureData &data)
-{
     uint8_t msg[MSG_LENGTH];
     msg[0] = data.sensor_id;
     memcpy(msg + 1, (void *) &data, 4);

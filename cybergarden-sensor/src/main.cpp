@@ -21,7 +21,6 @@ void loop() {
   measureData.sensor_id = 0xA5;
   measureData.sensor_type = 0x01;
   measureData.payload = getMockSensorData();
-  transmissionModule.encrypt((uint8_t*)&measureData+1, 4, (uint8_t*)&measureData+1);
   transmissionModule.transmit(measureData);
   delay(1000);
 }
