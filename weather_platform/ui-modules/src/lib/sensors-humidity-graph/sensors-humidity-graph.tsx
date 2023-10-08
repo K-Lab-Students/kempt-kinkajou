@@ -29,7 +29,7 @@ const options = {
     },
     title: {
       display: true,
-      text: "Sensors Temperature Graph",
+      text: "Sensors Humidity Graph",
     },
   },
 };
@@ -47,6 +47,7 @@ export interface SensorsHumidityGraphProps {
 export function SensorsHumidityGraph(props: SensorsHumidityGraphProps) {
   const labels = props.data.map(item => parseInt(item.time));
   const Humidities = props.data.map(item => parseInt(item.value));
+  Humidities.reverse();
 
   const data = {
     labels,

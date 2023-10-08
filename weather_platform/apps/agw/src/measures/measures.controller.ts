@@ -18,6 +18,21 @@ import {Measures} from "@weather-platform/prisma-clients/Measures";
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import {MeasureGetDTOClass} from "../../../measures-service/src/DTO/MeasureGetDTOClass.dto";
 
+function calculateTemperature(ThermistorPin: number): number {
+  const R1 = 10000; // Value of R1 on the module
+  const c1 = 0.001129148;
+  const c2 = 0.000234125;
+  const c3 = 0.0000000876741;
+
+  const Vo: number = ThermistorPin;
+  const R2: number = R1 * (1023.0 / Vo - 1.0); // Calculate the resistance on the thermistor
+  const logR2: number = Math.log(R2);
+  let T: number = 1.0 / (c1 + c2 * logR2 + c3 * logR2 * logR2 * logR2); // Temperature in Kelvin
+  T = T - 273.15; // Convert Kelvin to Celsius
+  return T;
+}
+
+
 @Controller('measures')
 export class MeasuresController {
   constructor(
@@ -77,6 +92,10 @@ export class MeasuresController {
     @Param('msg_type') msg_type: string,
     @Param('msg_value') msg_value: string,
   ): Promise<Partial<MeasuresCreateSuccessResponse> | null> {
+
+    if (msg_type === 'temperature') {
+      msg_value = calculateTemperature(Number(msg_value)).toString();
+    }
 
     const measure_create_data: MeasureCreateDTOLocalClass = {
       sendedInDate: sendedInDate,

@@ -12,7 +12,7 @@ from langchain.agents import create_json_agent, AgentExecutor
 from langchain.agents.agent_toolkits import JsonToolkit
 import os
 
-OPENAI_API = "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"
+OPENAI_API = "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"
 
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
 os.environ["LANGCHAIN_ENDPOINT"] = "https://api.smith.langchain.com"
@@ -59,7 +59,7 @@ def fetch_get_weather_data(params={}):
         response = requests.get(AGW_URL + 'api/v1/measures/get-for-ai')
         response.raise_for_status()
         data = response.json()
-        return data[0]
+        return data[-10:]
     except requests.exceptions.RequestException as e:
         print('Error fetching data:', e)
         return None

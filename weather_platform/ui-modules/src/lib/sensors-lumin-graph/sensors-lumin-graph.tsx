@@ -1,15 +1,15 @@
-import styles from './sensors-temperature-graph.module.scss';
+import styles from './sensors-lumin-graph.module.scss';
 import {
-  Chart as ChartJS,
   CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
+  Chart as ChartJS,
   Legend,
+  LinearScale,
+  LineElement,
+  PointElement,
+  Title,
+  Tooltip
 } from "chart.js";
-import { Line } from "react-chartjs-2";
+import {Line} from "react-chartjs-2";
 
 ChartJS.register(
   CategoryScale,
@@ -21,7 +21,7 @@ ChartJS.register(
   Legend,
 );
 
-export const options = {
+const options = {
   responsive: true,
   plugins: {
     legend: {
@@ -29,7 +29,7 @@ export const options = {
     },
     title: {
       display: true,
-      text: "Sensors Temperature Graph",
+      text: "Sensors Bright Graph",
     },
   },
 };
@@ -39,25 +39,25 @@ interface DataPoint {
   value: string;
 }
 
+
 /* eslint-disable-next-line */
-export interface SensorsTemperatureGraphProps {
+export interface SensorsLuminGraphProps {
   data: DataPoint[];
 }
 
-export function SensorsTemperatureGraph(props: SensorsTemperatureGraphProps) {
-
+export function SensorsLuminGraph(props: SensorsLuminGraphProps) {
   const labels = props.data.map(item => parseInt(item.time));
-  const temperatures = props.data.map(item => parseInt(item.value));
-  temperatures.reverse();
+  const Lumen = props.data.map(item => parseInt(item.value));
+  Lumen.reverse();
 
   const data = {
     labels,
     datasets: [
       {
-        label: "Temperature",
-        data: temperatures,
-        borderColor: "rgb(255, 99, 132)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        label: "Bright",
+        data: Lumen,
+        borderColor: 'rgb(255, 165, 0)',
+        backgroundColor: 'rgba(255, 165, 0, 0.5)',
       },
     ],
   };
@@ -71,4 +71,4 @@ export function SensorsTemperatureGraph(props: SensorsTemperatureGraphProps) {
   );
 }
 
-export default SensorsTemperatureGraph;
+export default SensorsLuminGraph;

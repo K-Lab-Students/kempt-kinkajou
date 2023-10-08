@@ -12,6 +12,7 @@
     "@nestjs/swagger": "^7.1.13",
     "@nx/devkit": "16.10.0",
     "@nx/plugin": "^16.10.0",
+    "@pbe/react-yandex-maps": "^1.2.5",
     "@prisma/client": "^5.4.1",
     "@swc/helpers": "~0.5.2",
     "axios": "^1.0.0",

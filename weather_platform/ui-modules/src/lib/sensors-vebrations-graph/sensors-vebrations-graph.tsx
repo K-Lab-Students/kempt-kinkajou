@@ -1,4 +1,5 @@
-import styles from './sensors-temperature-graph.module.scss';
+import styles from './sensors-vebrations-graph.module.scss';
+import {Line} from "react-chartjs-2";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -9,7 +10,6 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { Line } from "react-chartjs-2";
 
 ChartJS.register(
   CategoryScale,
@@ -29,7 +29,7 @@ export const options = {
     },
     title: {
       display: true,
-      text: "Sensors Temperature Graph",
+      text: "Sensors Vibration Graph",
     },
   },
 };
@@ -40,22 +40,21 @@ interface DataPoint {
 }
 
 /* eslint-disable-next-line */
-export interface SensorsTemperatureGraphProps {
+export interface SensorsVebrationsGraphProps {
   data: DataPoint[];
 }
 
-export function SensorsTemperatureGraph(props: SensorsTemperatureGraphProps) {
-
+export function SensorsVebrationsGraph(props: SensorsVebrationsGraphProps) {
   const labels = props.data.map(item => parseInt(item.time));
-  const temperatures = props.data.map(item => parseInt(item.value));
-  temperatures.reverse();
+  const vibrations = props.data.map(item => parseInt(item.value));
+  vibrations.reverse();
 
   const data = {
     labels,
     datasets: [
       {
-        label: "Temperature",
-        data: temperatures,
+        label: "Vibration",
+        data: vibrations,
         borderColor: "rgb(255, 99, 132)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",
       },
@@ -63,7 +62,7 @@ export function SensorsTemperatureGraph(props: SensorsTemperatureGraphProps) {
   };
 
   return (
-    <div className={'w-1/3 '}>
+    <div className={'w-full h-full '}>
       <div className={'p-4 bg-white shadow-lg rounded-xl ring-1 ring-gray-100'}>
         <Line options={options} data={data} />
       </div>
@@ -71,4 +70,4 @@ export function SensorsTemperatureGraph(props: SensorsTemperatureGraphProps) {
   );
 }
 
-export default SensorsTemperatureGraph;
+export default SensorsVebrationsGraph;
