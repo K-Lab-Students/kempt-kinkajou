@@ -97,6 +97,10 @@ export class MeasuresController {
       msg_value = calculateTemperature(Number(msg_value)).toString();
     }
 
+    if (math_time == "0") {
+      math_time = Date.now().toString();
+    }
+
     const measure_create_data: MeasureCreateDTOLocalClass = {
       sendedInDate: sendedInDate,
       sensor_uuid: sensor_uuid,
@@ -139,7 +143,12 @@ export class MeasuresController {
 
   @Get('get-for-ai')
   async getAgregatorsForAI() {
-    const res = await this.measuresService.get({});
+    const res = await this.measuresService.get({
+      orderBy: {
+        time: "desc"
+      },
+      take: 10
+    });
     const newArray = res.map(item => ({
       sensor_uuid: item.sensor_uuid,
       agregator_uuid: item.agregator_uuid,

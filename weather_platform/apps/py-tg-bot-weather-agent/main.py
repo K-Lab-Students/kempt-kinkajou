@@ -12,7 +12,7 @@ from langchain.agents import create_json_agent, AgentExecutor
 from langchain.agents.agent_toolkits import JsonToolkit
 import os
 
-OPENAI_API = "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"
+OPENAI_API = "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"
 
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
 os.environ["LANGCHAIN_ENDPOINT"] = "https://api.smith.langchain.com"
