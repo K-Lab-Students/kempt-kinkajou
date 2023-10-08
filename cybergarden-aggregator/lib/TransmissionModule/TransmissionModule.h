@@ -33,7 +33,6 @@ public:
     reedSolomonModule(&reedSolomonModule) {
         cipher = new ChaChaPoly();
     }
-    void decrypt(uint8_t * data, size_t data_size,  uint8_t* output_data);
     bool receive(uint8_t &sendor_id, MeasureData &data);
 };
 
