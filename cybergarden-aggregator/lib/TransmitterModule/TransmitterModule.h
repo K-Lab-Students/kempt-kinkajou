@@ -14,7 +14,7 @@ private:
     RH_ASK *rhAsk;
 public:
     TransmitterModule() {
-        rhAsk = new RH_ASK(2000, 4, 5, 0);
+        rhAsk = new RH_ASK(2000, 5, 4, 0);
     }
     bool init() {
         return rhAsk->init();

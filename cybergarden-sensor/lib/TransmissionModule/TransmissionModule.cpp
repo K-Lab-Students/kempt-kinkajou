@@ -25,12 +25,8 @@ void TransmissionModule::transmit(MeasureData &data)
         cipher->addAuthData(authdata + posn, len);
     }
 
-    for (posn = 0; posn < data_size; posn += inc) {
-        len = data_size - posn;
-        if (len > inc)
-            len = inc;
-        cipher->encrypt(buffer + posn, (uint8_t*)&data + 1 + posn, len);
-    }
+    cipher->encrypt(buffer + 1, (uint8_t*)&data, data_size);
+    buffer[0] = data.sensor_id;
 
     //*************************
     //Encryption Testing
@@ -55,10 +51,7 @@ void TransmissionModule::transmit(MeasureData &data)
     //     Serial.println("works");
     // }
 
-    uint8_t msg[MSG_LENGTH];
-    msg[0] = data.sensor_id;
-    memcpy(msg + 1, (void *) &data, 4);
     uint8_t encoded[MSG_LENGTH + ECC_LENGTH];
-    reedSolomonModule->encode(msg, encoded);
+    reedSolomonModule->encode(buffer, encoded);
     transmitterModule->send(encoded, MSG_LENGTH + ECC_LENGTH);
 }

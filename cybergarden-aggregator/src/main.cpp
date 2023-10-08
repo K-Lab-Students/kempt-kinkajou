@@ -12,7 +12,6 @@
 #endif
 
 #include "Uuid.h"
-#include <ArduinoJson.h>
 
 String serverName = "http://gw.cg.k-lab.su/api/v1/measures/register";
 
@@ -99,9 +98,13 @@ bool sendPayload(MeasureData &data) {
 MeasureData data;
 
 void loop() {
-  data.sensor_id = 0;
-  data.sensor_type = 1;
-  data.payload = rand() & 0xffff;
-  sendPayload(data);
-  delay(5000);
+  if (transmissionModule.receive(sensor_id, data)) {
+    data.sensor_id = sensor_id;
+    data.sensor_type = data.sensor_type;
+    data.payload = data.payload;
+    analogWrite(LED_BUILTIN, 255);
+    sendPayload(data);
+    delay(100);
+    analogWrite(LED_BUILTIN, 0);
+  }
 }
