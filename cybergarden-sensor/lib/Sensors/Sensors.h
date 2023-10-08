@@ -1,7 +1,7 @@
 #pragma once
 #include "Arduino.h"
-#include "DallasTemperature.h"
 #include "DHT.h"
+#include "math.h"
 
 ///////////////////////////////////////////////////////
 //                    Pins Definitions
@@ -14,9 +14,6 @@
 class Sensor{
 
   private:
-        // KY-001 
-        OneWire *oneWire;
-        DallasTemperature *tempSens;
         //KY-015 
         DHT *dht;
         
@@ -28,12 +25,7 @@ class Sensor{
 
 Sensor()
   {
-    oneWire = new OneWire(TEMP_SENS);
-    tempSens = new DallasTemperature(oneWire);
     dht = new DHT(HUM_SENS, DHT11);
-    tempSens->begin();
     dht->begin();
   }
-
-
 };

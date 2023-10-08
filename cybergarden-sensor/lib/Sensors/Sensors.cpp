@@ -1,15 +1,12 @@
 #include <Sensors.h>
 
 
-float Sensor::temperatureSensor(){
-      tempSens->requestTemperatures();
-      while (!tempSens->isConversionComplete());
-      float temp = tempSens->getTempCByIndex(1);
-      return temp;
+float Sensor::temperatureSensor(){ 
+      return analogRead(TEMP_SENS); 
 }
 
 float Sensor::humiditySensor(){
-      float h = dht->readHumidity(); 
+      float h = dht->readHumidity();
       if (isnan(h)) {
             return -1;
             }
