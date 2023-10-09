@@ -6,17 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fa9b3ab0-bfd5-4e07-8e87-da3d901a4d2e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Untitled.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/apps/agregators-service/project.json" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/apps/agregators-service/project.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/apps/agw/project.json" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/apps/agw/project.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/apps/crud/project.json" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/apps/crud/project.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/apps/measures-service/project.json" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/apps/measures-service/project.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/apps/py-tg-bot-weather-agent/project.json" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/apps/py-tg-bot-weather-agent/project.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/apps/sensors-service/project.json" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/apps/sensors-service/project.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/layout/project.json" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/layout/project.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/pages/project.json" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/pages/project.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/ui-modules/project.json" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/ui-modules/project.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_platform/ui-modules/src/lib/sensors-temperature-graph/sensors-temperature-graph.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/weather_platform/ui-modules/src/lib/sensors-temperature-graph/sensors-temperature-graph.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +43,7 @@
       <recent name="$PROJECT_DIR$/weather_platform/ui-modules/src/lib/potantial-probleme-sensors-table" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/photos" />
       <recent name="$PROJECT_DIR$/assets" />
     </key>
   </component>
@@ -65,7 +56,8 @@
       <option name="presentableId" value="Default" />
       <updated>1696824975001</updated>
       <workItem from="1696824978486" duration="81000" />
-      <workItem from="1696843417354" duration="757000" />
+      <workItem from="1696843417354" duration="1035000" />
+      <workItem from="1696854143684" duration="1425000" />
     </task>
     <servers />
   </component>
