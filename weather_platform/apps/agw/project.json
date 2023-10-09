@@ -3,6 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/agw/src",
   "projectType": "application",
+  "implicitDependencies": ["agregators-service", "measures-service", "sensors-service"],
   "targets": {
     "build": {
       "executor": "@nx/webpack:webpack",

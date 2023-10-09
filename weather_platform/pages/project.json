@@ -3,6 +3,7 @@
   "$schema": "../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "pages/src",
   "projectType": "library",
+  "implicitDependencies": ["ui-modules"],
   "tags": [],
   "targets": {
     "lint": {

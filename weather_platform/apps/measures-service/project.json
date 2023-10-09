@@ -3,6 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/measures-service/src",
   "projectType": "application",
+  "implicitDependencies": ["prisma-generator"],
   "targets": {
     "build": {
       "executor": "@nx/webpack:webpack",

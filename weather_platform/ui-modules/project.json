@@ -4,6 +4,7 @@
   "sourceRoot": "ui-modules/src",
   "projectType": "library",
   "tags": [],
+  "implicitDependencies": ["ui"],
   "targets": {
     "lint": {
       "executor": "@nx/linter:eslint",

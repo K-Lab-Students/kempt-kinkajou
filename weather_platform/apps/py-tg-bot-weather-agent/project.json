@@ -3,6 +3,7 @@
   "sourceRoot": "apps/py-tg-bot-weather-agent",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
+  "implicitDependencies": ["agw"],
   "generators": {},
   "name": "py-tg-bot-weather-agent",
   "targets": {
